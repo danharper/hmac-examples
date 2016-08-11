@@ -66,7 +66,7 @@ OpenSSL::HMAC.hexdigest('sha256', key, message)
 Base64.encode64(OpenSSL::HMAC.digest('sha256', key, message))
 ```
 
-## Python
+## Python 2
 
 ```py
 import hashlib
