@@ -85,7 +85,7 @@ hash.hexdigest()
 base64.b64encode(hash.digest())
 ```
 
-## C#
+## C&#35;
 
 ```cs
 using System;
