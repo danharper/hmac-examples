@@ -143,3 +143,7 @@ class Main {
 }
 ```
 
+---
+
+* https://stackoverflow.com/questions/13109588/base64-encoding-in-java
+* http://www.jokecamp.com/blog/examples-of-creating-base64-hashes-using-hmac-sha256-in-different-languages/
