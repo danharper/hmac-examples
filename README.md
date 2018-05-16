@@ -66,6 +66,21 @@ OpenSSL::HMAC.hexdigest('sha256', key, message)
 Base64.encode64(OpenSSL::HMAC.digest('sha256', key, message))
 ```
 
+## Elixir
+
+```elixir
+key = 'the shared secret key here'
+message = 'the message to hash here'
+
+signature = :crypto.hmac(:sha256, key, message)
+
+# to lowercase hexits
+Base.encode16(signature, case: :lower)
+
+# to base64
+Base.encode64(signature)
+```
+
 ## Go
 
 ```go
