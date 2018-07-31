@@ -2,14 +2,14 @@ e.g. for webhook hashes
 
 ---
 
-Example Inputs:
+Example inputs:
 
 | Variable | Value |
 | --- | --- |
 | key | `the shared secret key here` |
 | message | `the message to hash here ` |
 
-Example Outputs:
+Reference outputs for example inputs above:
 
 | Type | Hash |
 | --- | --- |
