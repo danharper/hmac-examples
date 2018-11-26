@@ -36,7 +36,7 @@ base64_encode(hash_hmac('sha256', $message, $key, true));
 ## NodeJS
 
 ```js
-var cryto = require('crypto');
+var crypto = require('crypto');
 
 var key = 'the shared secret key here';
 var message = 'the message to hash here';
