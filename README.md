@@ -50,6 +50,35 @@ hash.digest('hex');
 hash.digest('base64');
 ```
 
+## JavaScript ES6
+
+_Using the [Web Crypto API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API), available in all modern browsers. <sup>[[1]](https://caniuse.com/#feat=cryptography)</sup>_
+
+```js
+const key = 'the shared secret key here';
+const message = 'the message to hash here';
+
+const getUtf8Bytes = str =>
+  new Uint8Array(
+    [...unescape(encodeURIComponent(str))].map(c => c.charCodeAt())
+  );
+
+const keyBytes = getUtf8Bytes(key);
+const messageBytes = getUtf8Bytes(message);
+
+const cryptoKey = await crypto.subtle.importKey(
+  'raw', keyBytes, { name: 'HMAC', hash: 'SHA-256' },
+  true, ['sign']
+);
+const sig = await crypto.subtle.sign('HMAC', cryptoKey, messageBytes);
+
+// to lowercase hexits
+[...new Uint8Array(sig)].map(b => b.toString(16).padStart(2, '0')).join('');
+
+// to base64
+btoa(String.fromCharCode(...new Uint8Array(sig)));
+```
+
 ## Ruby
 
 ```rb
