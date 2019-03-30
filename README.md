@@ -60,7 +60,7 @@ const message = 'the message to hash here';
 
 const getUtf8Bytes = str =>
   new Uint8Array(
-    [...unescape(encodeURIComponent(str))].map(c => c.charCodeAt())
+    [...unescape(encodeURIComponent(str))].map(c => c.charCodeAt(0))
   );
 
 const keyBytes = getUtf8Bytes(key);
