@@ -101,7 +101,7 @@ Base64.encode64(OpenSSL::HMAC.digest('sha256', key, message))
 key = 'the shared secret key here'
 message = 'the message to hash here'
 
-signature = :crypto.hmac(:sha256, key, message)
+signature = :crypto.mac(:hmac, :sha256, key, message)
 
 # to lowercase hexits
 Base.encode16(signature, case: :lower)
